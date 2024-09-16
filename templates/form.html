@@ -1,0 +1,46 @@
+{% extends 'base.html' %}{% block title %}Form{% endblock %}
+{% block content %}
+
+   <br> 
+   <div class="container">
+    
+    <div class="container-item">
+        <p>Just a simple form</p>
+       </div>
+       
+       <div class="container-item">
+        <h3>{{ 'Edit User' if user else 'JW Flask Form' }}</h3>
+            <div class="container-form">
+                <form method="POST">
+                    
+                    <input type="text" name="name" value="{{ user.name if user else '' }}" required placeholder="Enter your name"><br>
+                    
+                    <input type="email" name="email" value="{{ user.email if user else '' }}" required placeholder="Enter your email"><br>
+                    
+                    <input type="text" name="phone" value="{{ user.phone if user else '' }}" placeholder="Enter your phone number"><br>
+                    
+                    <input type="text" name="address" value="{{ user.address if user else '' }}" placeholder="Enter your address"><br>
+                    
+                    <input type="text" name="city" value="{{ user.city if user else '' }}" placeholder="Enter your city"><br>
+                    
+                    <input type="text" name="state" value="{{ user.state if user else '' }}" placeholder="Enter your state"><br>
+                    
+                    <input type="text" name="zip_code" value="{{ user.zip_code if user else '' }}" placeholder="Enter your zip code"><br>
+                    
+                    <input type="text" name="country" value="{{ user.country if user else '' }}" placeholder="Enter your country"><br>
+                    
+                    <input type="text" name="occupation" value="{{ user.occupation if user else '' }}" placeholder="Enter your occupation"><br>
+
+                    <input type="text" name="company" value="{{ user.company if user else '' }}" placeholder="Enter your company"><br>
+                    
+                    <textarea name="comment" placeholder="Enter your comment">{{ user.comment if user else '' }}</textarea><br>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        
+       </div>
+   </div>
+   
+   
+{% endblock %}
